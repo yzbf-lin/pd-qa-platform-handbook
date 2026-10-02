@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="PD QA 平台产品手册：从接口与场景测试，到玩家托管、AI Agent、性能观测与分布式 Worker。">
+  <title>PD QA · 平台产品手册</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script defer src="content.js"></script>
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="mobile-header">
+    <a class="wordmark" href="#overview" aria-label="PD QA 平台简介">PD <span>QA</span></a>
+    <button class="mobile-menu" type="button" aria-label="打开章节导航" aria-controls="sidebar" aria-expanded="false">目录 <span aria-hidden="true">☰</span></button>
+  </header>
+  <button class="sidebar-backdrop" type="button" tabindex="-1" aria-label="关闭章节导航" hidden></button>
+  <aside class="sidebar" id="sidebar" aria-label="文档导航">
+    <div class="sidebar-brand">
+      <a class="wordmark" href="#overview" aria-label="PD QA 平台简介">PD <span>QA</span></a>
+      <p>平台产品手册</p>
+    </div>
+    <button class="search-trigger" type="button"><span>搜索功能与场景</span><kbd>⌘ K</kbd></button>
+    <p class="nav-label">阅读目录</p>
+    <nav id="chapter-nav" aria-label="章节"></nav>
+    <div class="sidebar-bottom"><span class="edition">PRODUCT HANDBOOK</span><p>测试、托管与执行<br>在同一个工作台连接起来。</p><button class="print-button" type="button">打印 / 保存为 PDF <span aria-hidden="true">↗</span></button></div>
+  </aside>
+  <main id="main" tabindex="-1">
+    <div class="document-top"><span>PD QA PLATFORM</span><span>功能说明 · 界面实录</span></div>
+    <div id="chapters"></div>
+    <footer class="document-footer"><a class="wordmark" href="#overview">PD <span>QA</span></a><p>让复杂测试可组织，让执行过程可观察。</p><a href="#overview">回到顶部 <span aria-hidden="true">↑</span></a></footer>
+  </main>
+  <dialog class="search-dialog" aria-labelledby="search-title">
+    <div class="dialog-top"><h2 id="search-title">查找平台能力</h2><button class="icon-button" data-close-dialog type="button" aria-label="关闭搜索">×</button></div>
+    <label class="sr-only" for="search-input">搜索功能、场景、协议或关键词</label>
+    <input id="search-input" type="search" placeholder="试试：拖拽、聊天、Worker…" autocomplete="off">
+    <p class="search-status" aria-live="polite"></p>
+    <div class="search-results"></div>
+    <div class="dialog-bottom">输入关键词搜索全文 <span><kbd>Esc</kbd> 关闭</span></div>
+  </dialog>
+  <dialog class="lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-top"><div><p class="eyebrow">界面实录</p><h2 id="lightbox-title"></h2></div><button class="icon-button" data-close-dialog type="button" aria-label="关闭图片">×</button></div>
+    <div class="lightbox-stage"><img class="lightbox-image" alt=""></div>
+    <p class="lightbox-caption"></p>
+    <div class="lightbox-actions"><button class="text-button lightbox-animation" type="button" hidden>播放演示</button><a class="text-button lightbox-original" target="_blank" rel="noopener">打开原图 ↗</a><span><kbd>Esc</kbd> 关闭</span></div>
+  </dialog>
+  <noscript><p class="noscript">请启用 JavaScript 查看这份离线产品手册。所有文字、图片与交互文件均保存在本项目中。</p></noscript>
+</body>
+</html>
