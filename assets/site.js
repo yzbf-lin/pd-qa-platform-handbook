@@ -37,11 +37,24 @@
   function renderModules(items) {
     return !items?.length ? '' : `<div class="capability-index">${items.map((item, index) => `<a class="capability-row" href="${escape(item.href)}"><span class="module-number">${String(index + 1).padStart(2, '0')}</span><div><h3>${escape(item.name)}</h3><p>${escape(item.text)}</p></div><span class="module-arrow" aria-hidden="true">↗</span></a>`).join('')}</div>`;
   }
+  function renderTable(chapter) {
+    if (!Array.isArray(chapter.table) || !chapter.table.length) return '';
+    const rows = chapter.table.map(row => Array.isArray(row) ? row : [row]);
+    const headers = Array.isArray(chapter.tableHeaders) ? chapter.tableHeaders : [];
+    const columns = Math.max(headers.length, ...rows.map(row => row.length));
+    if (!columns) return '';
+    const title = chapter.tableTitle || '能力说明';
+    const titleId = `${chapter.id}-table-title`;
+    const wide = columns > 2;
+    const head = headers.length ? `<thead><tr>${Array.from({ length: columns }, (_, index) => `<th scope="col">${lines(headers[index])}</th>`).join('')}</tr></thead>` : '';
+    const body = rows.map(row => `<tr>${Array.from({ length: columns }, (_, index) => index === 0 ? `<th scope="row">${lines(row[index])}</th>` : `<td>${lines(row[index])}</td>`).join('')}</tr>`).join('');
+    return `<div class="detail-table"><h3 id="${escape(titleId)}">${escape(title)}</h3><div class="table-scroll"${wide ? ` tabindex="0" role="region" aria-labelledby="${escape(titleId)}"` : ''}><table${wide ? ` class="is-wide" style="--table-columns:${columns}"` : ''} aria-labelledby="${escape(titleId)}">${head}<tbody>${body}</tbody></table></div></div>`;
+  }
   function renderChapter(chapter) {
     const heading = chapter.layout === 'hero' ? 'h1' : 'h2';
     const intro = `<p class="eyebrow">${escape(chapter.label)}</p><${heading} id="${escape(chapter.id)}-title">${lines(chapter.title)}</${heading}><p class="lead">${escape(chapter.lead)}</p>${chapter.intro ? `<p class="intro">${escape(chapter.intro)}</p>` : ''}`;
     const links = chapter.links ? `<div class="hero-actions">${chapter.links.map((link, index) => `<a class="${index === 0 ? 'primary-link' : 'secondary-link'}" href="${escape(link.href)}">${escape(link.label)}<span aria-hidden="true">${index === 0 ? '↓' : '↗'}</span></a>`).join('')}</div>` : '';
-    const table = chapter.table ? `<div class="detail-table"><h3>${escape(chapter.tableTitle || '能力说明')}</h3><table><tbody>${chapter.table.map(row => `<tr><th scope="row">${escape(row[0])}</th><td>${escape(row[1])}</td></tr>`).join('')}</tbody></table></div>` : '';
+    const table = renderTable(chapter);
     return `<section class="chapter ${escape(chapter.layout || '')}" id="${escape(chapter.id)}" aria-labelledby="${escape(chapter.id)}-title" tabindex="-1">${intro}${links}${renderModules(chapter.modules)}${chapter.layout !== 'hero' ? renderHighlights(chapter.highlights) : ''}${renderProcess(chapter.process)}${renderMedia(chapter.media)}${chapter.layout === 'hero' ? renderHighlights(chapter.highlights) : ''}${table}${chapter.note ? `<p class="note">${escape(chapter.note)}</p>` : ''}${chapter.closing ? `<p class="closing">${escape(chapter.closing)}</p>` : ''}</section>`;
   }
   $('#chapter-nav').innerHTML = data.chapters.map((chapter, index) => `<a class="nav-link" href="#${escape(chapter.id)}"><span class="nav-number">${String(index + 1).padStart(2, '0')}</span>${escape(chapter.nav)}</a>`).join('');
