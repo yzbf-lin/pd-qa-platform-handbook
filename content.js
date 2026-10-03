@@ -1,11 +1,11 @@
 /* 产品说明和媒体清单。仅使用已核实的能力；截图来自本地真实界面采集与用户提供素材，录屏记录实际操作。 */
-window.PD_QA_CONTENT = {
-  title: "PD QA",
+window.YTEST_CONTENT = {
+  title: "YTest",
   dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1843,808],"player-schedule":[1600,1000],"player-tasks":[742,560],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000],"ai-execution":[499,501],"world-map-overview":[737,613]},
   chapters: [
     {
       id: "overview", nav: "平台简介", label: "01 / OVERVIEW", title: "把复杂的游戏测试，\n变成可协作的工作台。", layout: "hero",
-      lead: "PD QA 是面向游戏服务端的测试与自动化平台，将协议调试、场景编排、玩家托管、AI Agent 和分布式执行整合到统一界面。",
+      lead: "YTest 是面向游戏服务端的测试与自动化平台，将协议调试、场景编排、玩家托管、AI Agent 和分布式执行整合到统一界面。",
       intro: "从一条接口请求，到一组持续运行的模拟玩家；从一次场景验证，到可以观察、分析和复用的测试过程。平台让测试能力从脚本走向可视化操作。",
       highlights: [
         { title: "编排测试", text: "连接协议请求、业务动作与控制流程，复用完整测试场景。" },
@@ -50,7 +50,7 @@ window.PD_QA_CONTENT = {
       tableTitle: "每种步骤做什么，如何配置",
       tableHeaders: ["步骤类型", "本例作用", "添加与配置"],
       table: [
-        ["Script · 脚本", "用 Python 准备巡检开关，供后续条件读取。", "通用步骤 → 脚本；在步骤参数的 script_content 中编写 PD.variables.set(\"demo_enabled\", \"1\")。"],
+        ["Script · 脚本", "用 Python 准备巡检开关，供后续条件读取。", "通用步骤 → 脚本；在步骤参数的 script_content 中用 Python 将共享变量 demo_enabled 设为 1。"],
         ["Role · 角色", "在指定玩家上下文中执行内部步骤。", "角色控制 → 角色；填写用户名，把心跳检查和巡检循环放入内部。"],
         ["Request · 请求", "发送 heartbeat 协议，获取服务器心跳响应。", "行为步骤 → 请求；请求路径填 heartbeat，参数为 {}。也可从「导入系统API」选择已有步骤。"],
         ["Loop · 循环", "将内部巡检流程重复三轮。", "逻辑控制 → 循环控制器；快捷编辑选择次数模式，次数填 3，再插入子步骤。也支持 forEach 和 while。"],
@@ -59,12 +59,12 @@ window.PD_QA_CONTENT = {
         ["Wait · 等待", "在两次操作之间留出 1 秒，控制执行节奏。", "通用步骤 → 等待；快捷编辑选择固定等待并填 1000 ms。需要统一时间点继续时，可选择「时间集结」。"],
         ["Scenario · 场景复用（可选）", "把已有测试流程组合到当前场景。", "步骤来源 → 导入场景；勾选目标后点击「引用场景」或「复制场景」，分别保留共享来源或生成可独立调整的副本。"]
       ],
-      note: "If 仅在条件成立时执行子步骤；固定等待使用毫秒，时间集结使用相对任务开始的秒数。编辑器还提供 Notify「消息」类型入口，但当前 PD 执行适配尚未支持，因此未纳入本例的可执行组合。"
+      note: "If 仅在条件成立时执行子步骤；固定等待使用毫秒，时间集结使用相对任务开始的秒数。编辑器还提供 Notify「消息」类型入口，但当前游戏执行适配尚未支持，因此未纳入本例的可执行组合。"
     },
     {
       id: "environments", nav: "环境与协议", label: "04 / ENVIRONMENTS", title: "切换测试上下文，\n延续同一套工作方式。", layout: "standard",
       lead: "环境将服务器、变量与 config_version 配置分支连接起来。切换环境时，测试操作对应明确的目标服务与协议上下文。",
-      highlights: [{ title: "服务器与变量", text: "集中配置目标服务器和环境变量，为执行提供统一上下文。" }, { title: "配置分支", text: "通过 config_version 分支关联对应的配置和协议定义。" }, { title: "TCP / Sproto", text: "PD 当前使用 TCP 连接与 Sproto 协议，支持对应环境下的接口与场景操作。" }],
+      highlights: [{ title: "服务器与变量", text: "集中配置目标服务器和环境变量，为执行提供统一上下文。" }, { title: "配置分支", text: "通过 config_version 分支关联对应的配置和协议定义。" }, { title: "TCP / Sproto", text: "当前示例项目使用 TCP 连接与 Sproto 协议，支持对应环境下的接口与场景操作。" }],
       media: [
         { image: "environments", title: "切换测试环境", caption: "通过环境下拉选项切换测试上下文，让后续操作对应明确的目标环境。", featured: true },
         { image: "environment-config", title: "服务器、变量与配置分支", caption: "在环境配置中维护目标服务器、环境变量与 config_version 分支，连接协议定义和执行上下文。", featured: true }
@@ -113,7 +113,7 @@ window.PD_QA_CONTENT = {
         { image: "worker-build", gif: "worker-flow", title: "版本更新：选择已发布的构建版本", caption: "Jenkins 完成构建发布后，在平台选择版本进行批次更新。录屏演示版本选择与更新记录查看，没有发起实际更新。", featured: true },
         { image: "worker-scale", title: "手动扩缩容：按测试需要调整实例", caption: "通过新增 Worker 配置补充执行实例，并结合实例管理按需增减规模。" }
       ],
-      closing: "从可视化编排到分布式运行，PD QA 将测试、玩家与执行资源连接成完整工作流。"
+      closing: "从可视化编排到分布式运行，YTest 将测试、玩家与执行资源连接成完整工作流。"
     }
   ]
 };

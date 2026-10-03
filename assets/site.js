@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const data = window.PD_QA_CONTENT;
+  const data = window.YTEST_CONTENT;
   if (!data || !Array.isArray(data.chapters)) return;
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];

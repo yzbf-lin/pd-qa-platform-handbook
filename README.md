@@ -1,12 +1,12 @@
-# PD QA · 平台产品手册
+# YTest · 平台产品手册
 
-介绍 PD QA 游戏测试平台的独立静态文档项目。默认使用深色主题，搭配真实深色界面截图与操作录屏，包含平台简介、功能地图、场景测试、环境与协议、玩家托管、AI 托管、性能观测和分布式 Worker 八个章节。
+介绍 YTest 游戏测试平台的独立静态文档项目。默认使用深色主题，搭配真实深色界面截图与操作录屏，包含平台简介、功能地图、场景测试、环境与协议、玩家托管、AI 托管、性能观测和分布式 Worker 八个章节。
 
 ## 查看
 
-公网地址：[PD QA 平台产品手册](https://yzbf-lin.github.io/pd-qa-platform-handbook/)，无需登录。
+公网地址：[YTest 平台产品手册](https://yzbf-lin.github.io/pd-qa-platform-handbook/)，无需登录。
 
-发布仓库：[yzbf-lin/pd-qa-platform-handbook](https://github.com/yzbf-lin/pd-qa-platform-handbook)，由 GitHub Pages 托管。
+发布仓库：[YTest 文档仓库](https://github.com/yzbf-lin/pd-qa-platform-handbook)，由 GitHub Pages 托管。
 
 直接用浏览器打开 `index.html`，无须安装依赖、启动服务或联网。完整目录一起复制即可离线分享。
 
@@ -58,10 +58,11 @@ npm run build          # 严格检查通过后复制到 dist/
 
 ## 内容与素材原则
 
+- 文档品牌统一为 YTest；截图与录屏保留采集时的原始界面标识。
 - 界面素材来自当前平台采集与用户提供的截图；录屏只记录真实操作，不制作产品界面替身。
 - 场景示例展示 Script、Role、Request、Loop、If、Action、Wait 七类已适配步骤，可选用 Scenario 引用或复制已有场景。If 仅在条件成立时执行子步骤。RPA 指点击添加步骤后，在树形流程中调整顺序与嵌套关系；本次示例为未保存、未执行的编辑草稿。
-- 编辑器虽有 Notify「消息」入口，但当前 PD 执行适配尚未支持，不将它计入本例可执行组合。OnlyOnce 也未作为已适配能力展示。
-- PD 当前使用 TCP / Sproto，环境关联服务器、变量与配置分支，不承诺未实现的通用协议切换。
+- 编辑器虽有 Notify「消息」入口，但当前游戏执行适配尚未支持，不将它计入本例可执行组合。OnlyOnce 也未作为已适配能力展示。
+- 当前示例项目使用 TCP / Sproto，环境关联服务器、变量与配置分支，不承诺未实现的通用协议切换。
 - 聊天信息按环境与 KID 聚合刷新；地图展示已接入的主城与行军、采集、战斗信息。
 - AI 保留会话与记忆，使用工具调用和受条件约束的任务委派；不将未实现的执行检查点写成故障恢复能力。
 - Worker 通过 Jenkins 构建发布，在平台中选版本批次更新，按需手动增减实例；不宣称负载自动弹性。
