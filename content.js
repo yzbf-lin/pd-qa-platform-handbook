@@ -1,7 +1,7 @@
-/* 产品说明和媒体清单。仅使用已核实的能力；截图与录屏由本地真实界面采集。 */
+/* 产品说明和媒体清单。仅使用已核实的能力；截图来自本地真实界面采集与用户提供素材，录屏记录实际操作。 */
 window.PD_QA_CONTENT = {
   title: "PD QA",
-  dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1600,1000],"player-schedule":[1600,1000],"player-tasks":[742,560],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000]},
+  dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1843,808],"player-schedule":[1600,1000],"player-tasks":[742,560],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000],"ai-execution":[499,501],"world-map-overview":[737,613]},
   chapters: [
     {
       id: "overview", nav: "平台简介", label: "01 / OVERVIEW", title: "把复杂的游戏测试，\n变成可协作的工作台。", layout: "hero",
@@ -77,11 +77,12 @@ window.PD_QA_CONTENT = {
       process: [{ title: "同环境玩家上线", text: "选择同一环境与 KID 的测试玩家，确认在线状态。" }, { title: "选择任务与参数", text: "打开任务下发，选择本次任务并配置参数，提交后进入执行队列。" }, { title: "观察地图与状态", text: "查看部队行军、玩家信息与任务结果，跟踪执行过程。" }],
       media: [
         { image: "players", title: "机器人列表：集中管理玩家账号", caption: "通过列表查看玩家与托管状态，进入账号详情和任务配置。", featured: true },
-        { image: "player-detail", title: "玩家详情：汇集账号与运行信息", caption: "查看单个玩家的基础信息和状态，将账号管理与托管操作连接起来。", featured: true },
+        { image: "player-detail", title: "群控工作台：快捷操作与玩家详情", caption: "围绕地图上的玩家展开环形操作菜单，进入联盟、内城、大地图、英雄等操作。右侧集中呈现基础信息、资源、部队与队列状态。", featured: true },
         { image: "player-tasks", title: "任务下发：选择任务并配置参数", caption: "临时下发面板以雷达任务为例，配置普通任务、精英领主、队伍策略与完成后等待等选项；本次下发不覆盖玩家原有任务组。" },
         { image: "player-schedule", title: "定时策略：按时刻或间隔执行", caption: "选择每日固定时刻或固定间隔，将重复任务安排为持续运行的托管计划。" },
         { image: "player-chat", title: "聊天信息：按环境与 KID 聚合", caption: "聊天视图持续同步消息，便于按测试上下文检查交互；图中展示已保存的历史聊天记录。", featured: true },
-        { image: "world-map", gif: "player-console", title: "真实运行：三名玩家并发打野", caption: "三名测试玩家同时在线并执行单次打野，地图显示三支行军部队，右侧同步更新所选玩家的部队与行军进度。本次三项任务均执行成功，部队已返回。", featured: true }
+        { image: "world-map", gif: "player-console", title: "真实运行：三名玩家并发打野", caption: "三名测试玩家同时在线并执行单次打野，地图显示三支行军部队，右侧同步更新所选玩家的部队与行军进度。本次三项任务均执行成功，部队已返回。", featured: true },
+        { image: "world-map-overview", title: "地图全景：集中查看玩家与部队标记", caption: "在同一张大地图上集中呈现玩家与部队标记，直观看到不同区域的分布与聚集情况，为多玩家运行过程提供全局视图。", featured: true, compact: true }
       ],
       note: "本段动态演示采用单次打野。雷达任务已有配置，但本次领奖接口返回异常，未作为完成闭环的演示。"
     },
@@ -91,6 +92,7 @@ window.PD_QA_CONTENT = {
       intro: "通过 agent_delegate，Agent 可将任务委派给同环境、同联盟内可见且已启用 AI 的空闲玩家，实现多个玩家之间的任务协同。",
       process: [{ title: "理解任务", text: "基于目标与玩家上下文形成操作意图。" }, { title: "调用工具", text: "通过已接入的游戏能力执行操作。" }, { title: "读取反馈", text: "根据执行结果继续多轮交互。" }, { title: "持续协同", text: "保留会话与记忆，基于最新状态继续决策。" }],
       media: [
+        { image: "ai-execution", title: "AI 执行反馈：工具调用与游戏状态", caption: "执行面板呈现工具操作、观测结果与回复。本例反馈已发起两次 Lv.1 野怪集结，并显示目标坐标与后台行军状态。", featured: true, compact: true },
         { image: "ai-agent", title: "人格卡片：配置 Agent 的行为方式", caption: "通过人格卡片组织 Agent 配置，为 AI 托管设定相应的行为指引。", featured: true },
         { image: "ai-goals", title: "目标预设：复用托管任务意图", caption: "维护可复用的目标预设，让 AI 托管围绕选定目标开展后续决策与操作。", featured: true }
       ],

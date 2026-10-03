@@ -21,7 +21,7 @@
       const [width, height] = data.dimensions?.[item.image] || [1600, 1000];
       mediaItems.push(media);
       figureNumber += 1;
-      return `<figure class="media-figure${item.featured ? ' featured' : ''}" data-media="${index}">
+      return `<figure class="media-figure${item.featured ? ' featured' : ''}${item.compact ? ' compact' : ''}"${item.compact ? ` style="--media-max-width:${width + 22}px"` : ''} data-media="${index}">
         <div class="media-frame"><button class="image-open" type="button" data-open-image="${index}" aria-label="放大查看：${escape(item.title)}"><img src="${escape(media.src)}" width="${width}" height="${height}" alt="${escape(item.alt || item.title)}" loading="${figureNumber === 1 ? 'eager' : 'lazy'}" decoding="async" data-media-image="${index}"></button>
         ${media.animation ? `<div class="media-controls"><button class="animation-button" type="button" data-animation="${index}" aria-pressed="false"><span class="play-symbol" aria-hidden="true">▶</span><span class="animation-label">播放演示</span></button><span class="recording-label">界面操作录屏 · GIF</span></div>` : ''}</div>
         <figcaption><span class="figure-number">${String(figureNumber).padStart(2, '0')}</span><div><p class="figure-title">${escape(item.title)}</p><p class="figure-caption">${escape(item.caption)}</p></div></figcaption>
