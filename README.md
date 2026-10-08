@@ -71,16 +71,17 @@ npm run build          # 严格检查通过后复制到 dist/
 
 ## 本版媒体展示范围
 
-本版于 2026-10-08 更新，包含 24 张深色截图和 3 份录屏。其中四张由用户提供原图，其实际截图日期未知；其余来自此前本地平台采集，不使用图片反色滤镜。图注与实际内容对应：
+本版于 2026-10-08 更新，包含 25 张深色截图和 3 份录屏。其中五张由用户提供原图，其实际截图日期未知；其余来自此前本地平台采集，不使用图片反色滤镜。图注与实际内容对应：
 
 - 接口截图展示 `Bag_UseItems` 协议结构抽屉，没有展示请求发送结果。
 - 环境素材分别展示环境切换下拉和服务器、变量、`config_version` 分支配置。
 - 场景素材展示七类步骤的地图巡检草稿，以及条件配置和真实拖拽操作。Action 使用 `random_aoi_roam`，表示 AOI 视角巡游，不表示派遣部队；截图与录屏不作为场景执行完成的证据。
 - 玩家素材覆盖机器人列表、基础信息、单项雷达任务下发配置、每日固定时刻 / 固定间隔定时策略，以及历史聊天。雷达面板展示普通任务、精英领主、队伍策略和等待选项，不表示六类任务同时执行。
 - 用户补充的玩家任务配置截图展示任务组、12 项任务的配置数量与启停入口，以及玩家信息、执行队列和行为记录。任务处于折叠状态，具体参数值未展示；记录包含运行中、成功和跳过状态，不表示全部任务已执行成功。
+- 用户补充的地图与聊天同屏截图展示玩家列表、大地图、科技与训练等队列进度、待执行任务和聊天频道入口。画面显示 1/4 在线、1 项采集中，选中玩家离线；本图是静态界面补充，不代表三名玩家并发运行或 AI 托管。
 - 地图录屏展示三名测试玩家同时在线、并发执行单次打野，三支部队的行军状态与玩家详情同步更新。三项任务均成功，部队已返回。采集后已核验三名演示玩家全部恢复离线，在线数为 0、无活动运行、无外派部队；原本地录制的恢复结果仅对应这三名演示玩家。
 - 雷达尝试中，两个运行没有可执行情报，另一个完成派遣但在 `Radar_GetIntelRewardOneClick` 领奖时返回参数异常 `code=2`，对应任务项失败。不能把该批次的表面 `SUCCESS` 当作雷达完成闭环；因此动态演示采用已验证成功的单次打野，没有将其标为雷达或 AI 托管实录。
-- 用户提供的地图全景补充玩家与部队标记分布，不据此推算并发规模；工作台截图展示环形操作菜单和详情，画面为 1/5 在线且选中玩家离线。四张用户原图直接归档使用。
+- 用户提供的地图全景补充玩家与部队标记分布，不据此推算并发规模；工作台截图展示环形操作菜单和详情，画面为 1/5 在线且选中玩家离线。五张用户原图直接归档使用。
 - AI 素材包含人格卡片、目标预设，以及用户补充的工具操作、观测结果与回复截图；该图反馈已发起两次 Lv.1 野怪集结，不据此推断战斗已完成或多 Agent 协同已实际发生。
 - Worker 素材覆盖节点列表、已发布版本选择器和新增实例配置。录屏仅演示版本列表与更新记录切换，没有执行构建、更新或扩缩容操作。构建发布由 Jenkins 完成，平台负责选择发布版本批次更新及手动增减实例。
 - 历史报告列表展示真实运行记录；压测观测截图当前没有可展示的历史指标，只说明已实现的观测界面与操作布局，不作为有效负载或性能结果的证据。后续加入实测报告时，应同步更新图注和本节说明。
@@ -89,6 +90,6 @@ npm run build          # 严格检查通过后复制到 dist/
 
 ## 素材清单
 
-配置的素材以 `content.js` 为准。默认截图名：`overview`、`interfaces`、`factory`、`scenarios`、`scenario-rpa`、`scenario-steps`、`environments`、`environment-config`、`players`、`player-detail`、`player-tasks`、`player-task-config`、`player-schedule`、`player-chat`、`world-map`、`world-map-overview`、`ai-execution`、`ai-agent`、`ai-goals`、`performance-reports`、`pressure`、`worker`、`worker-build`、`worker-scale`；默认录屏名：`scenario-flow`、`player-console`、`worker-flow`。
+配置的素材以 `content.js` 为准。默认截图名：`overview`、`interfaces`、`factory`、`scenarios`、`scenario-rpa`、`scenario-steps`、`environments`、`environment-config`、`players`、`player-detail`、`player-tasks`、`player-task-config`、`player-schedule`、`player-chat`、`world-map-console`、`world-map`、`world-map-overview`、`ai-execution`、`ai-agent`、`ai-goals`、`performance-reports`、`pressure`、`worker`、`worker-build`、`worker-scale`；默认录屏名：`scenario-flow`、`player-console`、`worker-flow`。
 
 截图缺失时页面会显示明确提示，严格检查会失败；因此未采集齐素材不应作为完成版分享。

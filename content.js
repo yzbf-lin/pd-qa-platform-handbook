@@ -1,7 +1,7 @@
 /* 产品说明和媒体清单。仅使用已核实的能力；截图来自本地真实界面采集与用户提供素材，录屏记录实际操作。 */
 window.YTEST_CONTENT = {
   title: "YTest",
-  dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1843,808],"player-schedule":[1600,1000],"player-tasks":[742,560],"player-task-config":[1914,866],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000],"ai-execution":[499,501],"world-map-overview":[737,613]},
+  dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1843,808],"player-schedule":[1600,1000],"player-tasks":[742,560],"player-task-config":[1914,866],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000],"world-map-console":[1902,856],"ai-execution":[499,501],"world-map-overview":[737,613]},
   chapters: [
     {
       id: "overview", nav: "平台简介", label: "01 / OVERVIEW", title: "把复杂的游戏测试，\n变成可协作的工作台。", layout: "hero",
@@ -82,6 +82,7 @@ window.YTEST_CONTENT = {
         { image: "player-tasks", title: "任务下发：选择任务并配置参数", caption: "临时下发面板以雷达任务为例，配置普通任务、精英领主、队伍策略与完成后等待等选项；本次下发不覆盖玩家原有任务组。" },
         { image: "player-schedule", title: "定时策略：按时刻或间隔执行", caption: "选择每日固定时刻或固定间隔，将重复任务安排为持续运行的托管计划。" },
         { image: "player-chat", title: "聊天信息：按环境与 KID 聚合", caption: "聊天视图持续同步消息，便于按测试上下文检查交互；图中展示已保存的历史聊天记录。", featured: true },
+        { image: "world-map-console", title: "群控工作台：地图、队列与聊天同屏查看", caption: "左侧展示玩家列表与在线状态，中央呈现大地图及行军、采集等状态概览；右侧集中展示科技、训练、建造等队列进度、待执行任务与最近聊天，并提供世界、联盟、私聊、群聊频道入口，便于结合地图查看玩家状态。", featured: true },
         { image: "world-map", gif: "player-console", title: "真实运行：三名玩家并发打野", caption: "三名测试玩家同时在线并执行单次打野，地图显示三支行军部队，右侧同步更新所选玩家的部队与行军进度。本次三项任务均执行成功，部队已返回。", featured: true },
         { image: "world-map-overview", title: "地图全景：集中查看玩家与部队标记", caption: "在同一张大地图上集中呈现玩家与部队标记，直观看到不同区域的分布与聚集情况，为多玩家运行过程提供全局视图。", featured: true, compact: true }
       ],
