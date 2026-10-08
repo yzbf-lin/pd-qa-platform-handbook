@@ -1,7 +1,7 @@
 /* 产品说明和媒体清单。仅使用已核实的能力；截图来自本地真实界面采集与用户提供素材，录屏记录实际操作。 */
 window.YTEST_CONTENT = {
   title: "YTest",
-  dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1843,808],"player-schedule":[1600,1000],"player-tasks":[742,560],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000],"ai-execution":[499,501],"world-map-overview":[737,613]},
+  dimensions: {"ai-agent":[1600,1000],"ai-goals":[1600,1000],"environment-config":[1472,1000],"environments":[1600,1000],"factory":[1600,1000],"interfaces":[1600,1000],"overview":[1600,1000],"performance-reports":[1600,1000],"player-chat":[1600,1000],"player-detail":[1843,808],"player-schedule":[1600,1000],"player-tasks":[742,560],"player-task-config":[1914,866],"players":[1600,1000],"pressure":[1600,1000],"scenario-rpa":[1440,906],"scenario-steps":[1440,906],"scenarios":[1440,906],"worker":[1600,1000],"worker-build":[1600,1000],"worker-scale":[1600,1000],"world-map":[1600,1000],"ai-execution":[499,501],"world-map-overview":[737,613]},
   chapters: [
     {
       id: "overview", nav: "平台简介", label: "01 / OVERVIEW", title: "把复杂的游戏测试，\n变成可协作的工作台。", layout: "hero",
@@ -78,6 +78,7 @@ window.YTEST_CONTENT = {
       media: [
         { image: "players", title: "机器人列表：集中管理玩家账号", caption: "通过列表查看玩家与托管状态，进入账号详情和任务配置。", featured: true },
         { image: "player-detail", title: "群控工作台：快捷操作与玩家详情", caption: "围绕地图上的玩家展开环形操作菜单，进入联盟、内城、大地图、英雄等操作。右侧集中呈现基础信息、资源、部队与队列状态。", featured: true },
+        { image: "player-task-config", title: "任务配置：编排玩家托管任务组", caption: "按任务组组织联盟日常、雷达任务、日常打野与资源采集等托管任务。展开任务可调整配置，通过开关控制启停，或点击单项执行按钮运行任务；右侧集中呈现玩家信息、执行队列与行为记录，便于跟踪运行状态。", featured: true },
         { image: "player-tasks", title: "任务下发：选择任务并配置参数", caption: "临时下发面板以雷达任务为例，配置普通任务、精英领主、队伍策略与完成后等待等选项；本次下发不覆盖玩家原有任务组。" },
         { image: "player-schedule", title: "定时策略：按时刻或间隔执行", caption: "选择每日固定时刻或固定间隔，将重复任务安排为持续运行的托管计划。" },
         { image: "player-chat", title: "聊天信息：按环境与 KID 聚合", caption: "聊天视图持续同步消息，便于按测试上下文检查交互；图中展示已保存的历史聊天记录。", featured: true },
